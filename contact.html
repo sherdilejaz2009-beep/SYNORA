@@ -1,0 +1,1656 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contact SYNORA — Get in touch with our team and discover premium accessories for Men, Women and Kids.">
+
+    <title>SYNORA | Contact</title>
+
+
+    <style>
+
+        /* =====================================================
+           SYNORA CONTACT PAGE
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f5;
+            color: #111;
+            transition: .4s ease;
+        }
+
+        body.dark {
+            background: #090909;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 1000;
+
+            padding: 19px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(255,255,255,.86);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        body.dark .navbar {
+            background: rgba(10,10,10,.88);
+            border-color: #292929;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 7px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 2px;
+
+            background: currentColor;
+
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid #ccc;
+
+            background: transparent;
+
+            border-radius: 50%;
+
+            font-size: 16px;
+        }
+
+        body.dark .nav-btn {
+            color: white;
+            border-color: #444;
+        }
+
+        .cart-btn {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+
+            top: -4px;
+            right: -3px;
+
+            width: 19px;
+            height: 19px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #111;
+            color: white;
+
+            font-size: 10px;
+        }
+
+        body.dark .cart-count {
+            background: white;
+            color: black;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .contact-hero {
+            min-height: 72vh;
+
+            padding: 160px 6% 80px;
+
+            display: flex;
+            align-items: end;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.25),
+                    rgba(0,0,0,.72)
+                ),
+                url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(55px, 9vw, 120px);
+
+            line-height: .87;
+
+            letter-spacing: -7px;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-hero h1 span {
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            color: #ddd;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           CONTACT INTRO
+        ===================================================== */
+
+        .section {
+            padding: 120px 6%;
+        }
+
+        .contact-layout {
+            display: grid;
+
+            grid-template-columns:
+                .85fr 1.4fr;
+
+            gap: 90px;
+
+            align-items: start;
+        }
+
+        .section-title {
+            font-size: clamp(45px, 6vw, 80px);
+
+            line-height: .9;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            color: #666;
+
+            line-height: 1.9;
+
+            max-width: 480px;
+        }
+
+        body.dark .intro-text {
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           CONTACT FORM
+        ===================================================== */
+
+        .contact-form {
+            border-top: 1px solid #bbb;
+        }
+
+        body.dark .contact-form {
+            border-color: #444;
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .form-group {
+            padding: 25px 0;
+
+            border-bottom: 1px solid #ccc;
+        }
+
+        body.dark .form-group {
+            border-color: #333;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+
+            border: 0;
+
+            outline: 0;
+
+            background: transparent;
+
+            color: inherit;
+
+            font-size: 17px;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+        .submit-btn {
+            margin-top: 25px;
+
+            padding: 16px 32px;
+
+            border: 0;
+
+            border-radius: 40px;
+
+            background: #111;
+
+            color: white;
+
+            font-weight: 800;
+        }
+
+        body.dark .submit-btn {
+            background: white;
+            color: black;
+        }
+
+
+        /* =====================================================
+           CONTACT INFORMATION
+        ===================================================== */
+
+        .info-section {
+            background: #111;
+
+            color: white;
+
+            padding: 110px 6%;
+        }
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .info-card {
+            min-height: 280px;
+
+            padding: 35px;
+
+            border: 1px solid #333;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: .4s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #777;
+        }
+
+        .info-number {
+            color: #777;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+        }
+
+        .info-card h3 {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: #999;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ===================================================== */
+
+        .experience {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .experience-image {
+            height: 600px;
+
+            overflow: hidden;
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .6s;
+        }
+
+        .experience-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .experience-content h2 {
+            font-size: clamp(45px, 6vw, 78px);
+
+            line-height: .92;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 25px;
+        }
+
+        .experience-content p {
+            color: #666;
+
+            line-height: 1.9;
+
+            margin-bottom: 20px;
+        }
+
+        body.dark .experience-content p {
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+
+        .faq-heading {
+            margin-bottom: 60px;
+        }
+
+        .faq-heading h2 {
+            font-size: clamp(45px, 7vw, 85px);
+
+            line-height: .9;
+
+            letter-spacing: -5px;
+        }
+
+        .faq-list {
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .faq-item {
+            border-top: 1px solid #bbb;
+
+            padding: 25px 0;
+
+            cursor: pointer;
+        }
+
+        body.dark .faq-item {
+            border-color: #333;
+        }
+
+        .faq-question {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            font-size: 19px;
+
+            font-weight: 700;
+        }
+
+        .faq-icon {
+            font-size: 24px;
+
+            transition: .3s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+
+            overflow: hidden;
+
+            color: #666;
+
+            line-height: 1.8;
+
+            transition: .4s;
+        }
+
+        body.dark .faq-answer {
+            color: #aaa;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+
+            padding-top: 18px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+
+        /* =====================================================
+           FINAL CTA
+        ===================================================== */
+
+        .final-cta {
+            padding: 120px 6%;
+
+            text-align: center;
+
+            background: #e8e8e3;
+        }
+
+        body.dark .final-cta {
+            background: #171717;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(48px, 8vw, 100px);
+
+            line-height: .9;
+
+            letter-spacing: -6px;
+
+            margin-bottom: 30px;
+        }
+
+        .final-cta h2 span {
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .final-cta p {
+            max-width: 600px;
+
+            margin: auto auto 30px;
+
+            color: #666;
+
+            line-height: 1.8;
+        }
+
+        body.dark .final-cta p {
+            color: #aaa;
+        }
+
+        .cta-btn {
+            display: inline-block;
+
+            padding: 16px 32px;
+
+            border-radius: 40px;
+
+            background: #111;
+
+            color: white;
+
+            font-weight: 800;
+        }
+
+        body.dark .cta-btn {
+            background: white;
+            color: black;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #0b0b0b;
+
+            color: white;
+
+            padding: 85px 6% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr 1fr;
+
+            gap: 60px;
+
+            padding-bottom: 65px;
+        }
+
+        .footer-logo {
+            font-size: 34px;
+
+            font-weight: 900;
+
+            letter-spacing: 8px;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-about {
+            max-width: 400px;
+
+            color: #888;
+
+            line-height: 1.8;
+        }
+
+        .footer-column h4 {
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 13px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+
+            padding-top: 25px;
+
+            color: #666;
+
+            font-size: 11px;
+
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .experience {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+
+                letter-spacing: 5px;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 5%;
+                right: 5%;
+
+                padding: 25px;
+
+                background: white;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            body.dark .nav-links {
+                background: #151515;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .contact-hero {
+                min-height: 65vh;
+
+                padding:
+                    140px 5%
+                    60px;
+            }
+
+            .section {
+                padding: 80px 5%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .info-section {
+                padding: 80px 5%;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-image {
+                height: 450px;
+            }
+
+            .final-cta {
+                padding: 85px 5%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .copyright {
+                display: block;
+
+                line-height: 2;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html"
+       class="logo">
+        SYNORA
+    </a>
+
+
+    <nav class="nav-links"
+         id="navLinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="accessories.html">
+            Accessories
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html"
+           class="active">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button class="nav-btn"
+                id="themeBtn">
+            ◐
+        </button>
+
+        <button class="nav-btn cart-btn"
+                onclick="openCart()">
+
+            🛒
+
+            <span class="cart-count"
+                  id="cartCount">
+                0
+            </span>
+
+        </button>
+
+        <button class="nav-btn menu-btn"
+                id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="contact-hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            SYNORA / CONTACT
+        </div>
+
+        <h1>
+            Let's Start
+            <span>A Conversation.</span>
+        </h1>
+
+        <p class="hero-description">
+            Have a question about SYNORA, our collections
+            or a product? We'd love to hear from you.
+            Send us a message and become part of the
+            SYNORA journey.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT FORM
+===================================================== -->
+
+<section class="section">
+
+    <div class="contact-layout">
+
+
+        <div>
+
+            <div class="eyebrow">
+                GET IN TOUCH
+            </div>
+
+            <h2 class="section-title">
+                Tell Us
+                What's On
+                Your Mind.
+            </h2>
+
+            <p class="intro-text">
+                Whether you're looking for a specific
+                accessory, want to know more about SYNORA,
+                or simply want to share your thoughts,
+                our team is here to listen.
+            </p>
+
+        </div>
+
+
+        <form class="contact-form"
+              id="contactForm">
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        YOUR NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        EMAIL ADDRESS
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    SUBJECT
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="What would you like to talk about?"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    YOUR MESSAGE
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Write your message here..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                Send Message →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT INFORMATION
+===================================================== -->
+
+<section class="info-section">
+
+    <div class="eyebrow">
+        SYNORA INFORMATION
+    </div>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="info-number">
+                01 / EMAIL
+            </div>
+
+            <div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    hello@synora.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-number">
+                02 / HOURS
+            </div>
+
+            <div>
+
+                <h3>
+                    Hours
+                </h3>
+
+                <p>
+                    Monday — Saturday<br>
+                    10:00 AM — 8:00 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-number">
+                03 / SOCIAL
+            </div>
+
+            <div>
+
+                <h3>
+                    Follow
+                </h3>
+
+                <p>
+                    Instagram<br>
+                    Facebook<br>
+                    TikTok
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section class="section">
+
+    <div class="experience">
+
+
+        <div class="experience-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=85"
+            alt="SYNORA shopping experience">
+
+        </div>
+
+
+        <div class="experience-content">
+
+            <div class="eyebrow">
+                THE SYNORA EXPERIENCE
+            </div>
+
+            <h2>
+                We Believe
+                Every Customer
+                Matters.
+            </h2>
+
+            <p>
+                SYNORA is built around people. Every question,
+                suggestion and piece of feedback helps us
+                understand how we can make the experience
+                better.
+            </p>
+
+            <p>
+                Our goal is to create a brand where discovering
+                an accessory feels exciting, choosing a product
+                feels personal and every interaction feels
+                genuinely worthwhile.
+            </p>
+
+            <p>
+                Your journey with SYNORA doesn't end when you
+                choose a product. It's the beginning of a
+                relationship between you and the brand.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="section">
+
+    <div class="faq-heading">
+
+        <div class="eyebrow">
+            QUICK ANSWERS
+        </div>
+
+        <h2>
+            Frequently
+            Asked.
+        </h2>
+
+    </div>
+
+
+    <div class="faq-list">
+
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+
+                <span>
+                    What does SYNORA offer?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </div>
+
+            <div class="faq-answer">
+
+                SYNORA offers a wide range of accessories
+                across Men, Women and Kids collections,
+                including watches, bags, jewelry,
+                sunglasses, wallets, toys and more.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+
+                <span>
+                    Can I add products to my cart?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </div>
+
+            <div class="faq-answer">
+
+                Yes. Browse the Accessories page, choose
+                a product and select Add to Cart. Your cart
+                keeps track of the selected products and
+                automatically calculates the total.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+
+                <span>
+                    Does SYNORA have Men, Women and Kids
+                    collections?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </div>
+
+            <div class="faq-answer">
+
+                Yes. The Accessories page separates the
+                collections into Men, Women and Kids so
+                you can quickly explore the products
+                you're looking for.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <div class="faq-question">
+
+                <span>
+                    How can I contact SYNORA?
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </div>
+
+            <div class="faq-answer">
+
+                You can use the contact form on this page
+                to send your message directly through the
+                website interface.
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="final-cta">
+
+    <div class="eyebrow">
+        ONE BRAND / EVERY GENERATION
+    </div>
+
+    <h2>
+        Your Next
+        <span>Signature.</span>
+    </h2>
+
+    <p>
+        Explore the SYNORA collection and discover
+        something that feels uniquely yours.
+    </p>
+
+    <a href="accessories.html"
+       class="cta-btn">
+
+        Explore Accessories
+
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="footer-logo">
+                SYNORA
+            </div>
+
+            <p class="footer-about">
+                SYNORA is a modern accessories brand created
+                to bring Men, Women and Kids together through
+                style, creativity and meaningful details.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="accessories.html">
+                Accessories
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                COLLECTIONS
+            </h4>
+
+            <a href="accessories.html?category=men">
+                Men
+            </a>
+
+            <a href="accessories.html?category=women">
+                Women
+            </a>
+
+            <a href="accessories.html?category=kids">
+                Kids
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                SYNORA
+            </h4>
+
+            <a href="about.html">
+                Our Story
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+            <a href="accessories.html">
+                Shop
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <span>
+            © 2026 SYNORA. All Rights Reserved.
+        </span>
+
+        <span>
+            Every Detail. Your Signature.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       DARK MODE
+    ===================================================== */
+
+    const themeBtn =
+        document.getElementById("themeBtn");
+
+
+    themeBtn.addEventListener(
+        "click",
+        function () {
+
+            document.body.classList.toggle("dark");
+
+            localStorage.setItem(
+                "synora-theme",
+                document.body.classList.contains("dark")
+                    ? "dark"
+                    : "light"
+            );
+
+        }
+    );
+
+
+    if (
+        localStorage.getItem("synora-theme")
+        === "dark"
+    ) {
+
+        document.body.classList.add("dark");
+
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    document
+        .getElementById("menuBtn")
+        .addEventListener(
+            "click",
+            function () {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.toggle("active");
+
+            }
+        );
+
+
+    /* =====================================================
+       CART COUNT
+    ===================================================== */
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("synora-cart")
+        ) || [];
+
+
+    document
+        .getElementById("cartCount")
+        .textContent = cart.length;
+
+
+    /* =====================================================
+       CART
+    ===================================================== */
+
+    function openCart() {
+
+        if (cart.length === 0) {
+
+            alert(
+                "Your SYNORA cart is currently empty."
+            );
+
+            return;
+
+        }
+
+
+        let total = 0;
+
+        let message =
+            "SYNORA CART\n\n";
+
+
+        cart.forEach(
+            function(item, index) {
+
+                message +=
+                    (index + 1) +
+                    ". " +
+                    item.name +
+                    " — Rs. " +
+                    item.price.toLocaleString() +
+                    "\n";
+
+                total += item.price;
+
+            }
+        );
+
+
+        message +=
+            "\n------------------\n" +
+            "TOTAL: Rs. " +
+            total.toLocaleString();
+
+
+        alert(message);
+
+    }
+
+
+    /* =====================================================
+       CONTACT FORM
+    ===================================================== */
+
+    document
+        .getElementById("contactForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document
+                    .getElementById("name")
+                    .value;
+
+
+                alert(
+                    "Thank you, " +
+                    name +
+                    "! Your message has been received by SYNORA."
+                );
+
+
+                this.reset();
+
+            }
+        );
+
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    const faqItems =
+        document.querySelectorAll(
+            ".faq-item"
+        );
+
+
+    faqItems.forEach(
+        function(item) {
+
+            item.addEventListener(
+                "click",
+                function() {
+
+                    this.classList.toggle(
+                        "open"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+</script>
+
+<script src="./script.js"></script>
+</body>
+</html>
+```

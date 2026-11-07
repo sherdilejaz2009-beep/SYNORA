@@ -1,0 +1,1733 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SYNORA — Premium accessories for Men, Women and Kids. Discover watches, bags, jewelry, sunglasses, toys and more.">
+
+    <meta name="keywords"
+          content="SYNORA, accessories, men accessories, women accessories, kids accessories, watches, bags, jewelry">
+
+    <title>SYNORA | Every Detail. Your Signature.</title>
+
+    <style>
+
+        /* =====================================================
+           SYNORA HOMEPAGE
+           Premium Luxury Accessories Brand
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f5;
+            color: #111;
+            transition: 0.4s ease;
+        }
+
+        body.dark {
+            background: #090909;
+            color: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+
+        /* =====================================================
+           LOADER
+        ===================================================== */
+
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #090909;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: 0.7s ease;
+        }
+
+        .loader-logo {
+            font-size: 48px;
+            letter-spacing: 12px;
+            color: white;
+            font-weight: 800;
+        }
+
+        .loader-line {
+            width: 160px;
+            height: 2px;
+            background: #777;
+            margin-top: 25px;
+            overflow: hidden;
+        }
+
+        .loader-line span {
+            display: block;
+            width: 40%;
+            height: 100%;
+            background: white;
+            animation: loading 1.2s infinite;
+        }
+
+        @keyframes loading {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(350%);
+            }
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.82);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        body.dark .navbar {
+            background: rgba(10,10,10,0.82);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 7px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            width: 42px;
+            height: 42px;
+            border: 1px solid #ccc;
+            background: transparent;
+            border-radius: 50%;
+            font-size: 17px;
+        }
+
+        body.dark .nav-btn {
+            color: white;
+            border-color: #444;
+        }
+
+        .cart-btn {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -4px;
+            right: -2px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background: #111;
+            color: white;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body.dark .cart-count {
+            background: white;
+            color: black;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 6% 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 30%, #ddddda, transparent 30%),
+                #f7f7f5;
+        }
+
+        body.dark .hero {
+            background:
+                radial-gradient(circle at 80% 30%, #242424, transparent 30%),
+                #090909;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 5px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.92;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero-text {
+            max-width: 500px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        body.dark .hero-text {
+            color: #aaa;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            padding: 16px 30px;
+            background: #111;
+            color: white;
+            border: 1px solid #111;
+            border-radius: 40px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .outline-btn {
+            padding: 16px 30px;
+            background: transparent;
+            border: 1px solid #999;
+            border-radius: 40px;
+            font-weight: 700;
+        }
+
+        body.dark .primary-btn {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        .hero-image {
+            height: 650px;
+            overflow: hidden;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .hero-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-image-label {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            padding: 12px 18px;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+
+        /* =====================================================
+           MARQUEE
+        ===================================================== */
+
+        .marquee {
+            overflow: hidden;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            white-space: nowrap;
+        }
+
+        .marquee-track {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee span {
+            margin: 0 35px;
+            font-size: 13px;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+
+        /* =====================================================
+           SECTION GENERAL
+        ===================================================== */
+
+        .section {
+            padding: 120px 6%;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 55px;
+            gap: 30px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(40px, 6vw, 75px);
+            line-height: 0.95;
+            letter-spacing: -3px;
+        }
+
+        .section-heading p {
+            max-width: 400px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        body.dark .section-heading p {
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           CATEGORY CARDS
+        ===================================================== */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            position: relative;
+            height: 550px;
+            overflow: hidden;
+            color: white;
+        }
+
+        .category-card img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.7s ease;
+        }
+
+        .category-card:hover img {
+            transform: scale(1.07);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding: 35px;
+            background: linear-gradient(
+                transparent 35%,
+                rgba(0,0,0,0.8)
+            );
+        }
+
+        .category-overlay h3 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .category-overlay p {
+            margin-bottom: 20px;
+        }
+
+        .category-link {
+            display: inline-block;
+            width: max-content;
+            padding: 11px 20px;
+            border: 1px solid white;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           FEATURED PRODUCTS
+        ===================================================== */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .product-image {
+            height: 390px;
+            overflow: hidden;
+            background: #e7e7e4;
+        }
+
+        .product-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 18px 3px;
+        }
+
+        .product-brand {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        .product-name {
+            margin: 8px 0;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .product-price {
+            font-weight: 800;
+        }
+
+        .product-add {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #222;
+            background: transparent;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .product-add:hover {
+            background: #111;
+            color: white;
+        }
+
+        body.dark .product-add {
+            color: white;
+            border-color: #555;
+        }
+
+        body.dark .product-add:hover {
+            background: white;
+            color: black;
+        }
+
+
+        /* =====================================================
+           STATEMENT SECTION
+        ===================================================== */
+
+        .statement {
+            min-height: 650px;
+            padding: 100px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #111;
+            color: white;
+        }
+
+        .statement-content {
+            max-width: 1000px;
+        }
+
+        .statement h2 {
+            font-size: clamp(45px, 7vw, 90px);
+            line-height: 1;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+        }
+
+        .statement p {
+            max-width: 700px;
+            margin: auto;
+            color: #aaa;
+            line-height: 1.9;
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ===================================================== */
+
+        .experience {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .experience-image {
+            height: 650px;
+            overflow: hidden;
+        }
+
+        .experience-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .experience-content h2 {
+            font-size: clamp(45px, 6vw, 80px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+        }
+
+        .experience-content p {
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        body.dark .experience-content p {
+            color: #aaa;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .feature h4 {
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+
+        /* =====================================================
+           BIG CTA
+        ===================================================== */
+
+        .cta {
+            margin: 0 6% 120px;
+            padding: 100px 40px;
+            text-align: center;
+            background: #e8e8e3;
+        }
+
+        body.dark .cta {
+            background: #171717;
+        }
+
+        .cta h2 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: auto auto 30px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        body.dark .cta p {
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #0b0b0b;
+            color: white;
+            padding: 90px 6% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 70px;
+        }
+
+        .footer-logo {
+            font-size: 35px;
+            letter-spacing: 8px;
+            font-weight: 900;
+            margin-bottom: 25px;
+        }
+
+        .footer-about {
+            max-width: 400px;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #999;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 25px;
+            color: #777;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                height: 550px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .experience {
+                grid-template-columns: 1fr;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .category-card {
+                height: 500px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+                letter-spacing: 5px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 5%;
+                right: 5%;
+                padding: 25px;
+                background: white;
+                flex-direction: column;
+                align-items: flex-start;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            }
+
+            body.dark .nav-links {
+                background: #151515;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 130px 5% 60px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-image {
+                height: 430px;
+            }
+
+            .section {
+                padding: 80px 5%;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading p {
+                margin-top: 25px;
+            }
+
+            .products {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .product-image {
+                height: 260px;
+            }
+
+            .experience-image {
+                height: 450px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                margin: 0 5% 80px;
+                padding: 70px 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .copyright {
+                display: block;
+                line-height: 2;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOADER
+===================================================== -->
+
+<div id="loader">
+    <div class="loader-logo">SYNORA</div>
+
+    <div class="loader-line">
+        <span></span>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        SYNORA
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">Home</a>
+
+        <a href="accessories.html">Accessories</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="nav-btn"
+                id="themeBtn"
+                aria-label="Toggle dark mode">
+            ◐
+        </button>
+
+        <button class="nav-btn cart-btn"
+                aria-label="Shopping cart"
+                onclick="openCart()">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="nav-btn menu-btn"
+                id="menuBtn"
+                aria-label="Open menu">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            SYNORA / SIGNATURE COLLECTION
+        </div>
+
+        <h1>
+            Every Detail.
+            <span>Your Signature.</span>
+        </h1>
+
+        <p class="hero-text">
+            Welcome to SYNORA — a modern accessories destination
+            created for every generation. Discover carefully selected
+            pieces for men, women and kids, designed to add personality
+            to every moment.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="accessories.html"
+               class="primary-btn">
+                Explore Collection
+            </a>
+
+            <a href="#featured"
+               class="outline-btn">
+                Discover SYNORA
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+        src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=85"
+        alt="Luxury SYNORA watch">
+
+        <div class="hero-image-label">
+            THE SIGNATURE EDIT
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MARQUEE
+===================================================== -->
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <span>MEN</span>
+        <span>WOMEN</span>
+        <span>KIDS</span>
+        <span>WATCHES</span>
+        <span>JEWELRY</span>
+        <span>BAGS</span>
+        <span>SUNGLASSES</span>
+        <span>TOYS</span>
+
+        <span>MEN</span>
+        <span>WOMEN</span>
+        <span>KIDS</span>
+        <span>WATCHES</span>
+        <span>JEWELRY</span>
+        <span>BAGS</span>
+        <span>SUNGLASSES</span>
+        <span>TOYS</span>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SHOP BY WORLD
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <h2>
+            Choose<br>
+            Your World.
+        </h2>
+
+        <p>
+            One destination. Three different worlds.
+            Explore our collections created especially for
+            Men, Women and Kids.
+        </p>
+
+    </div>
+
+
+    <div class="categories">
+
+        <!-- MEN -->
+
+        <a href="accessories.html?category=men"
+           class="category-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=1000&q=85"
+            alt="Men accessories">
+
+            <div class="category-overlay">
+
+                <h3>Men</h3>
+
+                <p>
+                    Watches, wallets, belts,
+                    sunglasses & more.
+                </p>
+
+                <span class="category-link">
+                    Explore Men
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- WOMEN -->
+
+        <a href="accessories.html?category=women"
+           class="category-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=85"
+            alt="Women accessories">
+
+            <div class="category-overlay">
+
+                <h3>Women</h3>
+
+                <p>
+                    Jewelry, handbags,
+                    watches & beauty accessories.
+                </p>
+
+                <span class="category-link">
+                    Explore Women
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- KIDS -->
+
+        <a href="accessories.html?category=kids"
+           class="category-card">
+
+            <img
+            src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=1000&q=85"
+            alt="Kids accessories and toys">
+
+            <div class="category-overlay">
+
+                <h3>Kids</h3>
+
+                <p>
+                    Toys, bags, watches,
+                    cute accessories & more.
+                </p>
+
+                <span class="category-link">
+                    Explore Kids
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED PRODUCTS
+===================================================== -->
+
+<section class="section" id="featured">
+
+    <div class="section-heading">
+
+        <h2>
+            Featured<br>
+            Pieces.
+        </h2>
+
+        <p>
+            A selection of SYNORA favorites.
+            Every piece is chosen to make the smallest
+            details feel unforgettable.
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=85"
+                alt="SYNORA Classic Watch">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-brand">
+                    SYNORA
+                </span>
+
+                <h3 class="product-name">
+                    Classic Signature Watch
+                </h3>
+
+                <div class="product-price">
+                    Rs. 8,999
+                </div>
+
+                <button
+                    class="product-add"
+                    onclick="addToCart('Classic Signature Watch', 8999)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=800&q=85"
+                alt="SYNORA Luxury Bag">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-brand">
+                    SYNORA
+                </span>
+
+                <h3 class="product-name">
+                    Signature Luxury Bag
+                </h3>
+
+                <div class="product-price">
+                    Rs. 12,500
+                </div>
+
+                <button
+                    class="product-add"
+                    onclick="addToCart('Signature Luxury Bag', 12500)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=85"
+                alt="SYNORA Jewelry">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-brand">
+                    SYNORA
+                </span>
+
+                <h3 class="product-name">
+                    Minimal Jewelry Set
+                </h3>
+
+                <div class="product-price">
+                    Rs. 5,999
+                </div>
+
+                <button
+                    class="product-add"
+                    onclick="addToCart('Minimal Jewelry Set', 5999)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85"
+                alt="SYNORA Sunglasses">
+
+            </div>
+
+            <div class="product-info">
+
+                <span class="product-brand">
+                    SYNORA
+                </span>
+
+                <h3 class="product-name">
+                    Urban Signature Shades
+                </h3>
+
+                <div class="product-price">
+                    Rs. 4,499
+                </div>
+
+                <button
+                    class="product-add"
+                    onclick="addToCart('Urban Signature Shades', 4499)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATEMENT
+===================================================== -->
+
+<section class="statement">
+
+    <div class="statement-content">
+
+        <div class="eyebrow">
+            THE SYNORA PHILOSOPHY
+        </div>
+
+        <h2>
+            Accessories aren't
+            just details.
+            They are identity.
+        </h2>
+
+        <p>
+            We believe the right accessory can change the way
+            you feel, the way you express yourself and the way
+            a moment is remembered.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section class="section">
+
+    <div class="experience">
+
+        <div class="experience-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=1200&q=85"
+            alt="SYNORA fashion accessories">
+
+        </div>
+
+
+        <div class="experience-content">
+
+            <div class="eyebrow">
+                WHY SYNORA
+            </div>
+
+            <h2>
+                Made for
+                Every Moment.
+            </h2>
+
+            <p>
+                SYNORA brings together accessories for every
+                generation under one modern identity. Whether
+                you're looking for a timeless watch, a beautiful
+                handbag, stylish sunglasses, meaningful jewelry
+                or something fun for the little ones, SYNORA
+                is designed to give every customer something
+                worth remembering.
+            </p>
+
+            <p>
+                Our goal is simple: create an experience where
+                quality, design and personality come together.
+                We don't believe accessories should simply
+                complete an outfit. They should tell a story.
+            </p>
+
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <h4>
+                        Premium Selection
+                    </h4>
+
+                    <p>
+                        Carefully selected accessories
+                        for every generation.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h4>
+                        One Brand
+                    </h4>
+
+                    <p>
+                        Men, Women and Kids —
+                        everything in one place.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h4>
+                        Modern Design
+                    </h4>
+
+                    <p>
+                        Clean, elegant and contemporary
+                        collections.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h4>
+                        SYNORA Experience
+                    </h4>
+
+                    <p>
+                        More than shopping —
+                        it's your signature.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div class="eyebrow">
+        YOUR STORY STARTS HERE
+    </div>
+
+    <h2>
+        Find Your
+        Signature.
+    </h2>
+
+    <p>
+        Explore the SYNORA collection and discover
+        accessories that feel like they were made
+        for you.
+    </p>
+
+    <a href="accessories.html"
+       class="primary-btn">
+        Shop Accessories
+    </a>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                SYNORA
+            </div>
+
+            <p class="footer-about">
+                SYNORA is a modern accessories brand bringing
+                together carefully selected pieces for Men,
+                Women and Kids. Every detail matters.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="accessories.html">
+                Accessories
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                COLLECTIONS
+            </h4>
+
+            <a href="accessories.html?category=men">
+                Men
+            </a>
+
+            <a href="accessories.html?category=women">
+                Women
+            </a>
+
+            <a href="accessories.html?category=kids">
+                Kids
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                SYNORA
+            </h4>
+
+            <a href="about.html">
+                Our Story
+            </a>
+
+            <a href="contact.html">
+                Get in Touch
+            </a>
+
+            <a href="accessories.html">
+                Shop
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <span>
+            © 2026 SYNORA. All Rights Reserved.
+        </span>
+
+        <span>
+            Every Detail. Your Signature.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       LOADER
+    ===================================================== */
+
+    window.addEventListener("load", function () {
+
+        setTimeout(function () {
+
+            const loader = document.getElementById("loader");
+
+            loader.style.opacity = "0";
+
+            setTimeout(function () {
+                loader.style.display = "none";
+            }, 700);
+
+        }, 1400);
+
+    });
+
+
+    /* =====================================================
+       DARK / LIGHT MODE
+    ===================================================== */
+
+    const themeBtn =
+        document.getElementById("themeBtn");
+
+    themeBtn.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+
+            localStorage.setItem("synora-theme", "dark");
+
+        } else {
+
+            localStorage.setItem("synora-theme", "light");
+
+        }
+
+    });
+
+
+    if (localStorage.getItem("synora-theme") === "dark") {
+
+        document.body.classList.add("dark");
+
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+
+    /* =====================================================
+       CART
+    ===================================================== */
+
+    let cart =
+        JSON.parse(localStorage.getItem("synora-cart")) || [];
+
+
+    function updateCartCount() {
+
+        document.getElementById("cartCount").textContent =
+            cart.length;
+
+    }
+
+
+    function addToCart(name, price) {
+
+        cart.push({
+            name: name,
+            price: price
+        });
+
+        localStorage.setItem(
+            "synora-cart",
+            JSON.stringify(cart)
+        );
+
+        updateCartCount();
+
+        alert(
+            name +
+            " has been added to your cart."
+        );
+
+    }
+
+
+    function openCart() {
+
+        if (cart.length === 0) {
+
+            alert("Your cart is currently empty.");
+
+            return;
+
+        }
+
+        let total = 0;
+
+        let message =
+            "SYNORA CART\n\n";
+
+        cart.forEach(function (item, index) {
+
+            message +=
+                (index + 1) +
+                ". " +
+                item.name +
+                " — Rs. " +
+                item.price.toLocaleString() +
+                "\n";
+
+            total += item.price;
+
+        });
+
+        message +=
+            "\n-------------------------\n" +
+            "TOTAL: Rs. " +
+            total.toLocaleString();
+
+        alert(message);
+
+    }
+
+
+    updateCartCount();
+
+</script>
+<script src="./script.js"></script>
+</body>
+</html>
+

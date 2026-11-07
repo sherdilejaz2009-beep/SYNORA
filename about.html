@@ -1,0 +1,1550 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Discover the story, vision and philosophy behind SYNORA, founded by SBE Sherdil Bin Ejaz.">
+
+    <title>SYNORA | Our Story</title>
+
+
+    <style>
+
+        /* ==================================================
+           SYNORA — ABOUT PAGE
+        ================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f5;
+            color: #111;
+            transition: .4s ease;
+        }
+
+        body.dark {
+            background: #090909;
+            color: #fff;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+
+        /* ==================================================
+           NAVBAR
+        ================================================== */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            z-index: 1000;
+
+            padding: 19px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(255,255,255,.86);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        body.dark .navbar {
+            background: rgba(10,10,10,.88);
+            border-color: #292929;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 7px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 34px;
+            align-items: center;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 2px;
+
+            background: currentColor;
+
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid #ccc;
+            background: transparent;
+
+            border-radius: 50%;
+
+            font-size: 16px;
+        }
+
+        body.dark .nav-btn {
+            color: white;
+            border-color: #444;
+        }
+
+        .cart-btn {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+
+            top: -4px;
+            right: -3px;
+
+            width: 19px;
+            height: 19px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #111;
+            color: white;
+
+            font-size: 10px;
+        }
+
+        body.dark .cart-count {
+            background: white;
+            color: black;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .about-hero {
+            min-height: 82vh;
+
+            padding: 160px 6% 90px;
+
+            display: flex;
+            align-items: end;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.2),
+                    rgba(0,0,0,.75)
+                ),
+                url("https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(55px, 9vw, 125px);
+
+            line-height: .86;
+
+            letter-spacing: -7px;
+
+            margin-bottom: 30px;
+        }
+
+        .about-hero h1 span {
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero-description {
+            max-width: 680px;
+
+            color: #ddd;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+
+        /* ==================================================
+           INTRO
+        ================================================== */
+
+        .section {
+            padding: 120px 6%;
+        }
+
+        .intro {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1.5fr;
+
+            gap: 90px;
+
+            align-items: start;
+        }
+
+        .intro-label {
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            font-weight: 800;
+        }
+
+        .intro-text {
+            font-size: clamp(28px, 4vw, 52px);
+
+            line-height: 1.1;
+
+            letter-spacing: -2px;
+        }
+
+        .intro-text span {
+            color: #777;
+        }
+
+
+        /* ==================================================
+           FOUNDER
+        ================================================== */
+
+        .founder {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .founder-image {
+            height: 680px;
+
+            overflow: hidden;
+
+            background: #ddd;
+        }
+
+        .founder-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-content {
+            max-width: 650px;
+        }
+
+        .founder-content h2 {
+            font-size: clamp(45px, 6vw, 80px);
+
+            line-height: .92;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 25px;
+        }
+
+        .founder-name {
+            font-size: 14px;
+
+            letter-spacing: 3px;
+
+            font-weight: 800;
+
+            margin-bottom: 30px;
+        }
+
+        .founder-content p {
+            color: #666;
+
+            line-height: 1.95;
+
+            margin-bottom: 22px;
+        }
+
+        body.dark .founder-content p {
+            color: #aaa;
+        }
+
+        .signature {
+            margin-top: 40px;
+
+            font-family: Georgia, serif;
+
+            font-size: 34px;
+
+            font-style: italic;
+        }
+
+
+        /* ==================================================
+           STORY
+        ================================================== */
+
+        .story {
+            background: #111;
+
+            color: white;
+
+            padding: 130px 6%;
+        }
+
+        .story-inner {
+            max-width: 1050px;
+
+            margin: auto;
+        }
+
+        .story h2 {
+            font-size: clamp(45px, 7vw, 90px);
+
+            line-height: .92;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 50px;
+        }
+
+        .story p {
+            color: #aaa;
+
+            font-size: 18px;
+
+            line-height: 2;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* ==================================================
+           VISION / MISSION
+        ================================================== */
+
+        .split-heading {
+            margin-bottom: 70px;
+        }
+
+        .split-heading h2 {
+            font-size: clamp(45px, 7vw, 90px);
+
+            line-height: .9;
+
+            letter-spacing: -5px;
+        }
+
+        .vision-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .vision-card {
+            min-height: 400px;
+
+            padding: 45px;
+
+            border: 1px solid #ccc;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            transition: .4s;
+        }
+
+        body.dark .vision-card {
+            border-color: #333;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .vision-number {
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            color: #777;
+        }
+
+        .vision-card h3 {
+            font-size: 40px;
+
+            margin-bottom: 20px;
+        }
+
+        .vision-card p {
+            color: #666;
+
+            line-height: 1.8;
+        }
+
+        body.dark .vision-card p {
+            color: #aaa;
+        }
+
+
+        /* ==================================================
+           VALUES
+        ================================================== */
+
+        .values {
+            background: #e8e8e3;
+        }
+
+        body.dark .values {
+            background: #161616;
+        }
+
+        .values-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .value {
+            padding: 35px 5px;
+
+            border-top: 1px solid #999;
+        }
+
+        .value h3 {
+            font-size: 24px;
+
+            margin-bottom: 15px;
+        }
+
+        .value p {
+            color: #666;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+        body.dark .value p {
+            color: #aaa;
+        }
+
+
+        /* ==================================================
+           CLOSING
+        ================================================== */
+
+        .closing {
+            min-height: 600px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 6%;
+        }
+
+        .closing-inner {
+            max-width: 1000px;
+        }
+
+        .closing h2 {
+            font-size: clamp(50px, 8vw, 105px);
+
+            line-height: .9;
+
+            letter-spacing: -6px;
+
+            margin-bottom: 35px;
+        }
+
+        .closing h2 span {
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .closing p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #666;
+
+            line-height: 1.9;
+
+            margin-bottom: 35px;
+        }
+
+        body.dark .closing p {
+            color: #aaa;
+        }
+
+        .cta-btn {
+            display: inline-block;
+
+            padding: 16px 30px;
+
+            border-radius: 40px;
+
+            background: #111;
+
+            color: white;
+
+            font-weight: 800;
+        }
+
+        body.dark .cta-btn {
+            background: white;
+            color: black;
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+            background: #0b0b0b;
+
+            color: white;
+
+            padding: 85px 6% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr 1fr;
+
+            gap: 60px;
+
+            padding-bottom: 65px;
+        }
+
+        .footer-logo {
+            font-size: 34px;
+
+            font-weight: 900;
+
+            letter-spacing: 8px;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-about {
+            max-width: 400px;
+
+            color: #888;
+
+            line-height: 1.8;
+        }
+
+        .footer-column h4 {
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 13px;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+
+            padding-top: 25px;
+
+            color: #666;
+
+            font-size: 11px;
+
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+
+        /* ==================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 1000px) {
+
+            .founder {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-image {
+                height: 550px;
+            }
+
+            .values-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+                letter-spacing: 5px;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 5%;
+                right: 5%;
+
+                padding: 25px;
+
+                background: white;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            body.dark .nav-links {
+                background: #151515;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .about-hero {
+                min-height: 70vh;
+
+                padding:
+                    140px 5%
+                    60px;
+            }
+
+            .section {
+                padding: 80px 5%;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+            .founder {
+                gap: 45px;
+            }
+
+            .founder-image {
+                height: 450px;
+            }
+
+            .story {
+                padding: 90px 5%;
+            }
+
+            .story p {
+                font-size: 16px;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .copyright {
+                display: block;
+
+                line-height: 2;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     NAVBAR
+================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html"
+       class="logo">
+        SYNORA
+    </a>
+
+
+    <nav class="nav-links"
+         id="navLinks">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="accessories.html">
+            Accessories
+        </a>
+
+        <a href="about.html"
+           class="active">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button class="nav-btn"
+                id="themeBtn">
+            ◐
+        </button>
+
+        <button class="nav-btn cart-btn"
+                onclick="openCart()">
+
+            🛒
+
+            <span class="cart-count"
+                  id="cartCount">
+                0
+            </span>
+
+        </button>
+
+        <button class="nav-btn menu-btn"
+                id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="about-hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            SYNORA / OUR STORY
+        </div>
+
+        <h1>
+            More Than
+            <span>Accessories.</span>
+        </h1>
+
+        <p class="hero-description">
+            SYNORA was created with a simple belief:
+            the smallest details can become the strongest
+            expression of who we are.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     INTRO
+================================================== -->
+
+<section class="section">
+
+    <div class="intro">
+
+        <div class="intro-label">
+            THE BEGINNING
+        </div>
+
+        <div class="intro-text">
+
+            SYNORA began with an idea —
+            <span>
+                to create a place where style,
+                individuality and everyday life
+                could meet.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FOUNDER
+================================================== -->
+
+<section class="section">
+
+    <div class="founder">
+
+
+        <div class="founder-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=85"
+            alt="Founder of SYNORA">
+
+        </div>
+
+
+        <div class="founder-content">
+
+            <div class="eyebrow">
+                THE FOUNDER
+            </div>
+
+            <h2>
+                Meet the
+                Vision Behind
+                SYNORA.
+            </h2>
+
+            <div class="founder-name">
+                SBE SHERDIL BIN EJAZ
+            </div>
+
+
+            <p>
+                My name is SBE Sherdil Bin Ejaz, and SYNORA
+                represents a vision that started with something
+                very simple: the desire to create a brand that
+                people could connect with.
+            </p>
+
+            <p>
+                I believe a brand should be more than a name
+                printed on a product. A real brand should carry
+                an identity, a feeling and a reason to be
+                remembered. That belief became the foundation
+                of SYNORA.
+            </p>
+
+            <p>
+                From the beginning, the idea was to bring
+                different worlds together. Men, Women and Kids
+                should all have a place where they can discover
+                accessories that match their personality and
+                everyday life.
+            </p>
+
+            <p>
+                SYNORA is built around the idea that style does
+                not have one age, one personality or one
+                definition. A watch can represent confidence.
+                A handbag can represent elegance. A bracelet
+                can represent individuality. Even something as
+                simple as a toy can create a memory.
+            </p>
+
+            <p>
+                My goal is to build SYNORA step by step into
+                a name that people recognize, trust and feel
+                proud to be connected with. Every product,
+                every collection and every experience should
+                reflect the same commitment: keep improving,
+                keep learning and never stop dreaming bigger.
+            </p>
+
+            <div class="signature">
+                Sherdil Bin Ejaz
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     BRAND STORY
+================================================== -->
+
+<section class="story">
+
+    <div class="story-inner">
+
+        <div class="eyebrow">
+            THE SYNORA STORY
+        </div>
+
+        <h2>
+            Built With
+            Purpose.
+        </h2>
+
+
+        <p>
+            SYNORA is not designed to be just another
+            accessories store. It is an evolving brand built
+            around the belief that personal style can be
+            expressed through the smallest details.
+        </p>
+
+        <p>
+            Our world is divided into three collections:
+            Men, Women and Kids. Each collection has its own
+            character while remaining connected by one
+            recognizable SYNORA identity.
+        </p>
+
+        <p>
+            For Men, we focus on pieces that complement
+            confidence and everyday style. For Women, we
+            celebrate elegance, personality and individuality.
+            For Kids, we create a world of fun, imagination
+            and memorable little details.
+        </p>
+
+        <p>
+            The journey of SYNORA is about continuous growth.
+            We want to listen, learn, improve and create an
+            experience that becomes better with every step.
+        </p>
+
+        <p>
+            The ambition is not simply to sell more products.
+            The ambition is to build a brand that people
+            remember because of how it makes them feel.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     VISION / MISSION
+================================================== -->
+
+<section class="section">
+
+    <div class="split-heading">
+
+        <div class="eyebrow">
+            WHAT DRIVES US
+        </div>
+
+        <h2>
+            Vision Meets
+            Purpose.
+        </h2>
+
+    </div>
+
+
+    <div class="vision-grid">
+
+
+        <div class="vision-card">
+
+            <div class="vision-number">
+                01 / VISION
+            </div>
+
+            <div>
+
+                <h3>
+                    Think Bigger.
+                </h3>
+
+                <p>
+                    Our vision is to grow SYNORA into a
+                    recognizable accessories brand that
+                    represents modern style, creativity and
+                    confidence across generations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="vision-card">
+
+            <div class="vision-number">
+                02 / MISSION
+            </div>
+
+            <div>
+
+                <h3>
+                    Create Better.
+                </h3>
+
+                <p>
+                    Our mission is to provide a thoughtfully
+                    selected collection of accessories while
+                    creating a shopping experience that feels
+                    modern, simple and memorable.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="vision-card">
+
+            <div class="vision-number">
+                03 / EXPERIENCE
+            </div>
+
+            <div>
+
+                <h3>
+                    Feel Different.
+                </h3>
+
+                <p>
+                    We want every interaction with SYNORA to
+                    feel intentional — from discovering a
+                    product to choosing the piece that becomes
+                    part of your story.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="vision-card">
+
+            <div class="vision-number">
+                04 / FUTURE
+            </div>
+
+            <div>
+
+                <h3>
+                    Keep Evolving.
+                </h3>
+
+                <p>
+                    SYNORA is a journey. We believe in
+                    continuous improvement, new ideas and
+                    building a stronger brand with every
+                    generation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     VALUES
+================================================== -->
+
+<section class="section values">
+
+    <div class="split-heading">
+
+        <div class="eyebrow">
+            OUR VALUES
+        </div>
+
+        <h2>
+            What We
+            Believe.
+        </h2>
+
+    </div>
+
+
+    <div class="values-grid">
+
+
+        <div class="value">
+
+            <h3>
+                Quality
+            </h3>
+
+            <p>
+                We believe products should be selected with
+                care and presented with honesty.
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <h3>
+                Identity
+            </h3>
+
+            <p>
+                Every person has a unique personality.
+                SYNORA exists to help express it.
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <h3>
+                Creativity
+            </h3>
+
+            <p>
+                We believe new ideas are what transform
+                an ordinary experience into something
+                memorable.
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <h3>
+                Growth
+            </h3>
+
+            <p>
+                We are committed to learning, improving
+                and building something meaningful over time.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     CLOSING
+================================================== -->
+
+<section class="closing">
+
+    <div class="closing-inner">
+
+        <div class="eyebrow">
+            WELCOME TO SYNORA
+        </div>
+
+        <h2>
+            Your Style.
+            <span>Your Story.</span>
+        </h2>
+
+        <p>
+            Whether you're searching for a signature watch,
+            a beautiful bag, a meaningful piece of jewelry,
+            stylish sunglasses or something special for a
+            child, SYNORA is here to make every detail count.
+        </p>
+
+        <a href="accessories.html"
+           class="cta-btn">
+            Explore Accessories
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <div class="footer-logo">
+                SYNORA
+            </div>
+
+            <p class="footer-about">
+                SYNORA is a modern accessories brand created
+                to bring Men, Women and Kids together through
+                style, creativity and meaningful details.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="accessories.html">
+                Accessories
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                COLLECTIONS
+            </h4>
+
+            <a href="accessories.html?category=men">
+                Men
+            </a>
+
+            <a href="accessories.html?category=women">
+                Women
+            </a>
+
+            <a href="accessories.html?category=kids">
+                Kids
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                SYNORA
+            </h4>
+
+            <a href="about.html">
+                Our Story
+            </a>
+
+            <a href="contact.html">
+                Get In Touch
+            </a>
+
+            <a href="accessories.html">
+                Shop
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <span>
+            © 2026 SYNORA. All Rights Reserved.
+        </span>
+
+        <span>
+            Every Detail. Your Signature.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+    /* ================================================
+       DARK / LIGHT MODE
+    ================================================= */
+
+    const themeBtn =
+        document.getElementById("themeBtn");
+
+
+    themeBtn.addEventListener(
+        "click",
+        function () {
+
+            document.body.classList.toggle("dark");
+
+            localStorage.setItem(
+                "synora-theme",
+                document.body.classList.contains("dark")
+                    ? "dark"
+                    : "light"
+            );
+
+        }
+    );
+
+
+    if (
+        localStorage.getItem("synora-theme")
+        === "dark"
+    ) {
+
+        document.body.classList.add("dark");
+
+    }
+
+
+    /* ================================================
+       MOBILE MENU
+    ================================================= */
+
+    document
+        .getElementById("menuBtn")
+        .addEventListener(
+            "click",
+            function () {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.toggle("active");
+
+            }
+        );
+
+
+    /* ================================================
+       CART COUNT
+    ================================================= */
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("synora-cart")
+        ) || [];
+
+
+    document
+        .getElementById("cartCount")
+        .textContent = cart.length;
+
+
+    /* ================================================
+       CART
+    ================================================= */
+
+    function openCart() {
+
+        if (cart.length === 0) {
+
+            alert(
+                "Your SYNORA cart is currently empty."
+            );
+
+            return;
+
+        }
+
+
+        let total = 0;
+
+        let message =
+            "SYNORA CART\n\n";
+
+
+        cart.forEach(
+            function(item, index) {
+
+                message +=
+                    (index + 1) +
+                    ". " +
+                    item.name +
+                    " — Rs. " +
+                    item.price.toLocaleString() +
+                    "\n";
+
+                total += item.price;
+
+            }
+        );
+
+
+        message +=
+            "\n------------------\n" +
+            "TOTAL: Rs. " +
+            total.toLocaleString();
+
+
+        alert(message);
+
+    }
+
+</script>
+
+<script src="./script.js"></script>
+</body>
+</html>
+```
